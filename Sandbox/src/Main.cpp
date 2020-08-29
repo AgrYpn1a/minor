@@ -14,6 +14,7 @@ public:
 	}
 };
 
+// The Entry point of the app
 Minor::Application* Minor::CreateApplication()
 {
 	return new Sandbox();
