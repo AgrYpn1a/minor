@@ -4,9 +4,9 @@
  * For use by Minor applications
  */
 
-#include "Application.h"
-#include "Log.h"
+#include "Minor/Application.h"
+#include "Minor/Log.h"
 
 // --- Entry Point ------------
-#include "EntryPoint.h"
+#include "Minor/EntryPoint.h"
 // ----------------------------
