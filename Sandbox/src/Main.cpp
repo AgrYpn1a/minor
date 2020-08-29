@@ -1,12 +1,20 @@
-#include <iostream>
+#include "Minor.h"
 
-namespace Minor
+class Sandbox : public Minor::Application
 {
-	__declspec(dllimport) void Print();
-}
+public:
+	Sandbox()
+	{
 
-int main()
+	}
+
+	~Sandbox()
+	{
+
+	}
+};
+
+Minor::Application* Minor::CreateApplication()
 {
-	Minor::Print();
-	return std::cin.get();
+	return new Sandbox();
 }

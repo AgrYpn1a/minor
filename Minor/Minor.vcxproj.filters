@@ -13,15 +13,30 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Minor">
+      <UniqueIdentifier>{3833dc64-641d-4de1-aef0-ccd66010f36c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Minor">
+      <UniqueIdentifier>{34437414-b60e-4892-be5c-17eaefce7638}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Test.h">
+    <ClInclude Include="src\Application.h">
+      <Filter>Header Files\Minor</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core.h">
+      <Filter>Header Files\Minor</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Minor.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EntryPoint.h">
+      <Filter>Header Files\Minor</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Test.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\Application.cpp">
+      <Filter>Source Files\Minor</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
