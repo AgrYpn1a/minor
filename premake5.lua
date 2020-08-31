@@ -10,6 +10,11 @@ workspace "Minor"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDir = {}
+IncludeDir["GLFW"] = "Minor/vendor/GLFW/include"
+
+include "Minor/vendor/GLFW"
+
 project "Minor"
 	location "Minor"
 	kind "SharedLib"
@@ -17,6 +22,9 @@ project "Minor"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("intermediate/" .. outputdir .. "/%{prj.name}")
+
+	pchheader "minpch.h"
+	pchsource "Minor/src/minpch.cpp"
 
 	files
 	{
@@ -26,13 +34,21 @@ project "Minor"
 
 	includedirs
 	{
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/src",
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
 		cppdialect "C++17"
 		staticruntime "On"
-		systemversion "10.0.18362.0"
+		systemversion "latest"
 
 		defines
 		{
@@ -85,7 +101,7 @@ project "Sandbox"
 	filter "system:windows"
 		cppdialect "C++17"
 		staticruntime "On"
-		systemversion "10.0.18362.0"
+		systemversion "latest"
 
 		defines
 		{
